@@ -5,13 +5,13 @@ import bgImage from '@/assets/background.png';
 function Footer() {
   return (
     <StyledFooter>
-      <Image className="background" src={bgImage} alt="메이플 배경 이미지" />
+      <Image className="bg" src={bgImage} alt="메이플 배경 이미지" priority={true} />
     </StyledFooter>
   );
 }
 
 const StyledFooter = styled.footer`
-  .background {
+  .bg {
     width: 100%;
     height: 570px;
   }
