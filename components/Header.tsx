@@ -14,18 +14,18 @@ function Header() {
 
 const StyledHeader = styled.header`
   display: flex;
-  gap: 50px;
+  gap: 80px;
   background-color: #24b5ff;
+  padding: 30px 80px;
 
   .char {
-    width: 220px;
-    height: 328px;
-    margin-left: 40px;
+    width: 165px;
+    height: 246px;
   }
 
   .logo {
-    width: 770px;
-    height: 250px;
+    width: 670px;
+    height: 200px;
     margin-top: 30px;
   }
 `;
