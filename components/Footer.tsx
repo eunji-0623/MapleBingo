@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import bgImage from '@/assets/background.png';
+import bgImage from '@/assets/footer_background.png';
 
 function Footer() {
   return (
@@ -13,7 +13,7 @@ function Footer() {
 const StyledFooter = styled.footer`
   .bg {
     width: 100%;
-    height: 420px;
+    height: 200px;
   }
 `;
 
