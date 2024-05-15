@@ -46,7 +46,13 @@ function Bingo() {
   );
 }
 
-const BingoWrapper = styled.div`
+interface BingoWrapperProps {
+  'data-image': {
+    src: string;
+  };
+}
+
+const BingoWrapper = styled.div<BingoWrapperProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
