@@ -13,7 +13,7 @@ function Footer() {
 const StyledFooter = styled.footer`
   .bg {
     width: 100%;
-    height: 570px;
+    height: 420px;
   }
 `;
 

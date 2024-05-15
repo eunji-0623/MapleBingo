@@ -10,7 +10,8 @@ function Square({ value, onSquareClick }: Props) {
 }
 
 const SquareButton = styled.button`
-  color: red;
+  width: 100px;
+  height: 100px;
 `;
 
 export default Square;

@@ -14,19 +14,20 @@ function Header() {
 
 const StyledHeader = styled.header`
   display: flex;
+  justify-content: center;
   gap: 80px;
   background-color: #24b5ff;
-  padding: 30px 80px;
+  padding: 10px 80px;
 
   .char {
-    width: 165px;
-    height: 246px;
+    width: 123px;
+    height: 184px;
   }
 
   .logo {
-    width: 670px;
-    height: 200px;
-    margin-top: 30px;
+    width: 570px;
+    height: 160px;
+    margin-top: 10px;
   }
 `;
 
