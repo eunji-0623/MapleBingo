@@ -2,6 +2,7 @@ import Head from 'next/head';
 import MainContent from '@/components/MainContent';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Bingo from '@/components/Bingo';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
       <MainContent>
         <Header></Header>
-        <main></main>
+        <Bingo></Bingo>
         <Footer></Footer>
       </MainContent>
     </>
