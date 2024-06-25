@@ -1,20 +1,22 @@
-import Image from 'next/image';
 import styled from 'styled-components';
 import bgImage from '@/assets/footer_background.png';
 
-function Footer() {
-  return (
-    <StyledFooter>
-      <Image className="bg" src={bgImage} alt="메이플 배경 이미지" priority={true} />
-    </StyledFooter>
-  );
+interface FooterProps {
+  'data-image': {
+    src: string;
+  };
 }
 
-const StyledFooter = styled.footer`
-  .bg {
-    width: 100%;
-    height: 200px;
-  }
+function Footer() {
+  return <StyledFooter data-image={bgImage}></StyledFooter>;
+}
+
+const StyledFooter = styled.footer<FooterProps>`
+  width: 1080px;
+  height: 200px;
+  background-image: url(${(props) => props['data-image'].src});
+  background-repeat: no-repeat;
+  background-size: 1080px auto;
 `;
 
 export default Footer;
