@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import bgImage from '@/assets/footer_background.png';
+import SaveButton from './Button/SaveButton';
 
 interface FooterProps {
   'data-image': {
@@ -8,10 +9,17 @@ interface FooterProps {
 }
 
 function Footer() {
-  return <StyledFooter data-image={bgImage}></StyledFooter>;
+  return (
+    <StyledFooter data-image={bgImage}>
+      <SaveButton />
+    </StyledFooter>
+  );
 }
 
 const StyledFooter = styled.footer<FooterProps>`
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
   width: 1080px;
   height: 200px;
   background-image: url(${(props) => props['data-image'].src});
