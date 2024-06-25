@@ -1,47 +1,27 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import bgImage from '@/assets/main_background.png';
 import Square from './Square';
 
 function Bingo() {
-  const handleClick = () => {};
+  const [isSelect, setIsSelect] = useState(Array(25).fill(false));
+
+  const handleClick = (idx: number) => {
+    const nextSquares = isSelect.slice();
+    nextSquares[idx] = !nextSquares[idx];
+    setIsSelect(nextSquares);
+  };
 
   return (
     <BingoWrapper data-image={bgImage}>
-      <div>
-        <Square value="1" onSquareClick={handleClick} />
-        <Square value="2" onSquareClick={handleClick} />
-        <Square value="3" onSquareClick={handleClick} />
-        <Square value="4" onSquareClick={handleClick} />
-        <Square value="5" onSquareClick={handleClick} />
-      </div>
-      <div>
-        <Square value="1" onSquareClick={handleClick} />
-        <Square value="2" onSquareClick={handleClick} />
-        <Square value="3" onSquareClick={handleClick} />
-        <Square value="4" onSquareClick={handleClick} />
-        <Square value="5" onSquareClick={handleClick} />
-      </div>
-      <div>
-        <Square value="1" onSquareClick={handleClick} />
-        <Square value="2" onSquareClick={handleClick} />
-        <Square value="3" onSquareClick={handleClick} />
-        <Square value="4" onSquareClick={handleClick} />
-        <Square value="5" onSquareClick={handleClick} />
-      </div>
-      <div>
-        <Square value="1" onSquareClick={handleClick} />
-        <Square value="2" onSquareClick={handleClick} />
-        <Square value="3" onSquareClick={handleClick} />
-        <Square value="4" onSquareClick={handleClick} />
-        <Square value="5" onSquareClick={handleClick} />
-      </div>
-      <div>
-        <Square value="1" onSquareClick={handleClick} />
-        <Square value="2" onSquareClick={handleClick} />
-        <Square value="3" onSquareClick={handleClick} />
-        <Square value="4" onSquareClick={handleClick} />
-        <Square value="5" onSquareClick={handleClick} />
-      </div>
+      {Array.from({ length: 5 }, (_, rowIndex) => (
+        <div key={rowIndex}>
+          {Array.from({ length: 5 }, (_, colIndex) => {
+            const idx = rowIndex * 5 + colIndex;
+            return <Square key={idx} idx={idx} value={`${colIndex + 1}`} onSquareClick={handleClick} isSelect={isSelect[idx]} />;
+          })}
+        </div>
+      ))}
     </BingoWrapper>
   );
 }
